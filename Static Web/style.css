@@ -1,0 +1,25 @@
+
+.banner-container {
+  overflow: hidden;
+  height: 50px; /* set the height of the banner */
+}
+
+.banner-content {
+  display: flex;
+  animation: scroll-left 20s linear infinite; /* set the animation to scroll left */
+}
+
+.banner-content p {
+  padding: 10px; /* add padding to the messages */
+  white-space: nowrap; /* prevent the messages from wrapping */
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+

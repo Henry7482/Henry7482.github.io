@@ -1,0 +1,494 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Colors:
+    #890DFF - purple
+    #0C0CE8 - dark blue
+    #0080FF - blue
+    #00EAEB - cyan
+    #00FF78 - green
+ */
+
+body {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    background-color: black;
+    color:white;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+li {
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+main {
+    position: relative;
+}
+/* Header */
+
+header {
+    background-color: #0F0F0F;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: larger;
+    background-color: #0F0F0F;
+    border-bottom: 0.5vh ridge #1C1C1C;
+    
+}
+
+.header_logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    padding: 1rem 1.5rem 0.5rem;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header_logo img {
+    width: 25%;
+}
+
+.header_logo .search_bar {
+    width: 35.6rem;
+    height: 3.2rem;
+    border-radius: 1.3rem;
+    outline: transparent;
+    margin-right: 2rem;
+    border: 0.3rem solid #1C1C1C; 
+    font-size: 1.2rem;
+    padding: 0.5rem 1.25rem;
+    background-color: #f1f1f1;
+    justify-items: center;
+    font-family: 'Quicksand', sans-serif;
+    margin-left: auto;
+}
+.header_logo svg {
+    color: #ffffff;
+    width: 3rem;
+    height: 3rem;
+    outline: transparent;
+    border: none;
+    transition: 0.3s; /* add a smooth transition when changing the color */
+  }
+
+#shopping_cart_icon {
+    padding-top: 0.4rem;
+    padding-left: 0.45rem;
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+.header_nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 0 6rem;
+    margin: 0;
+}
+
+.header_nav ul li {
+    position: relative;
+}
+
+.header_nav ul li a {
+    display: inline-block;
+    position: relative;
+    padding: 1rem;
+}
+
+/* Elements with an effect */
+
+#heart_icon:hover {
+    color: rgb(255, 69, 69);
+    transition: all 0.3s ease-in-out;
+}
+
+#shopping_cart_icon:hover {
+    color: rgb(0, 226, 0);
+    transition: all 0.3s ease-in-out;
+}
+
+#user_icon:hover {
+    color: rgb(93, 93, 255);
+    transition: all 0.3s ease-in-out;
+}
+
+.header_nav ul li a:after{    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #0DFFF8;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+.header_nav ul li a:hover:after { 
+    width: 100%; 
+    left: 0; 
+  }
+.header_nav ul li a:hover {
+    color: #0DFFF8;
+    transition: all 0.3s ease-in-out;
+ }
+
+/* Banner */
+
+.book_banner {
+    overflow: hidden; /* hide any content that goes outside of the container's bounds */
+    position: relative; /* set the position to relative to allow absolute positioning of the child element */
+}
+
+.book_banner .banner_photo {
+    display: flex;
+    position: relative; 
+    z-index: 100;
+    left: -100%;
+    transition: all 0.3s ease-in-out;
+    animation: carMoving 500ms ease forwards;
+    animation-delay: 500ms;
+}
+
+.banner_photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-image: linear-gradient(to bottom, transparent, white);
+}
+
+.banner_photo p {
+    position: absolute;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    bottom: 15%;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 2rem;
+    z-index: 200;
+}
+
+.banner_photo a {
+    z-index: 300;
+}
+
+.banner_photo button {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #0DFFF8;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    color: black;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    z-index: 200;
+}
+
+.blur-box {
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    bottom: 0;
+    background-image: linear-gradient(to bottom, transparent, rgb(110, 62, 124));
+    z-index: 100;
+    filter: blur(5px);
+}
+
+/* Elements with an effect */
+
+@keyframes carMoving {
+    0% {
+        left: -100%;
+    }
+    100% {
+        display: block;
+        left: 0;
+    }
+}
+
+.banner_photo a button:hover{
+    scale: 1.1;
+    bottom: 4.5%;
+    left: 50.5%;
+    box-shadow: 0px 0px 25px 3px #0DFFF88d;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Category */
+
+.category {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: 0;
+    background: #222;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 7px,
+      rgba(0, 0, 0, 0.8) 9px,
+      rgba(0, 0, 0, 0.8) 13px,
+      transparent 13px
+    );
+    padding: 0 0 4rem;
+  }
+
+.category:before {
+    content: "";
+    position: absolute;
+    bottom: 0.2%;
+    width: 70%;
+    height: 0.5vh;
+    background: #1f1f1f;
+}
+
+.category .title {
+    display: flex;
+    flex-direction: row;
+    left: 0;
+    width: 100%;
+    padding: 3rem 6rem;
+}
+
+
+
+.category .title .title_1 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin: 0;
+    /* https://codepen.io/ananyaneogi/pen/Bgozrz */
+    text-shadow: 0 0 5px #890DFF, 0 0 15px #890DFF, 0 0 20px #890DFF, 0 0 40px #890DFF, 0 0 60px #0080FF, 0 0 10px #0C0CE8, 0 0 98px #0080FF;
+    color: #0CE8E8;
+}
+
+.category .title .title_2 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin: 0;
+    /* https://codepen.io/ananyaneogi/pen/Bgozrz */
+    text-shadow: 0 0 5px #7401FF, 0 0 15px #7401FF, 0 0 20px #7401FF, 0 0 40px #7401FF, 0 0 60px #ff058a, 0 0 10px #D60CE8, 0 0 98px #ff058a;
+    color: #dfc4ff;
+}
+
+.category .title .title_3 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin: 0;
+    /* https://codepen.io/ananyaneogi/pen/Bgozrz */
+    text-shadow: 0 0 5px #FF0582, 0 0 15px #FF0582, 0 0 20px #FF0582, 0 0 40px #FF0582, 0 0 60px #5401FF, 0 0 10px #BD0CE8, 0 0 98px #5401FF;
+    color: #dbc3ff;
+}
+
+.category .title .title_4 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin: 0;
+    /* https://codepen.io/ananyaneogi/pen/Bgozrz */
+    text-shadow: 0 0 5px #FF010A, 0 0 15px #FF010A, 0 0 20px #FF010A, 0 0 40px #FF010A, 0 0 60px #FF7F05, 0 0 10px #EB3800, 0 0 98px #FF7F05;
+    color: #ffb5b5;
+}
+
+.category .book_list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0rem 6rem;
+}
+
+.category .book {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: calc((100% / 4) - 4rem);
+    transition: all 0.3s ease-in-out;
+}
+
+.category .book img {
+    width: 100%;
+    object-fit: fill;
+    aspect-ratio: 6 / 9;
+    box-shadow: 0px 3px 25px 3px #0080ff8d;
+    transition: all 0.3s ease-in-out;
+}
+
+.category #title {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 1.5rem auto 0.5rem;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.category #by {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.category #price {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.category #button {
+    position: relative;
+}
+
+.category #button .button {
+    z-index: 200;
+}
+
+.category #button .button button{
+    background-color: transparent;
+    color: #FFF;
+    padding: 0.5rem 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    border: none;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    z-index: 100;
+}
+
+.category #button .cover {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(to right, #FFF 50%, transparent 50%) top,
+    linear-gradient(to left, #FFF 50%, transparent 50%) bottom;
+    background-repeat: no-repeat;
+    background-size:100% 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+.category #button .cover:after {
+    content : "";
+    position: absolute;
+    right    : 0;
+    z-index: 100;
+    bottom  : 0;
+    width  : 2px;
+    height   : 50%;
+    background: #FFF;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .category #button .cover:before {
+    content : "";
+    position: absolute;
+    left    : 0;
+    z-index: 100;
+    top  : 0;
+    width  : 2px;
+    height   : 50%; 
+    background: #FFF;
+    transition: all 0.3s ease-in-out;
+  }
+
+/* Elements with an effect */
+
+.category .book img:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+.category .book a #title {
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+}
+
+
+@keyframes rotate-gradient {
+    from {
+        background-position: 0%;
+    }
+    to {
+        background-position: 100%;
+    }
+}
+
+.category .book:hover #title {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  
+    background-image: linear-gradient(90deg, rgba(196,134,255,1) 0%, rgba(123,123,227,1) 50%, rgba(131,194,255,1) 100%);
+    animation-name: rotate-gradient;
+    animation-duration: 3s;
+    background-size: 200%;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.category .book:hover #by {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  
+    background-image: linear-gradient(90deg, rgba(0,128,255,1) 0%, rgba(0,234,235,1) 100%);
+    animation-name: rotate-gradient;
+    animation-duration: 3s;
+    background-size: 200%;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.category .book:hover #price {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  
+    background-image: linear-gradient(90deg, rgba(0,234,235,1) 0%, rgba(0,255,120,1) 100%);
+    animation-name: rotate-gradient;
+    animation-duration: 3s;
+    background-size: 200%;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.category #button .button button:hover {
+    cursor: pointer;
+    background-color: #00FF78;
+    color: #000;
+    scale: 1.1;
+    box-shadow: 0px 0px 25px 3px #00FF788d;
+    transition: all 0.3s ease-in-out;
+}
+
+.category #button .button:hover + .cover {
+    scale: 1.1;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+

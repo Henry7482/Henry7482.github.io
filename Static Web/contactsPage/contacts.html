@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+  </head>
+  <body>
+    <header>
+        <img src="" alt="Logo">
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="">Catergory 1</a></li>
+                <li><a href="">Catergory 2</a></li>
+                <li><a href="">Catergory 3</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+      <h1>Contact Us</h1>
+      <form>
+        <label for="contact-purpose">Contact Purpose</label>
+        <select id="contact-purpose" name="contact-purpose">
+          <option value="sell-books">I want to sell books</option>
+          <option value="buy-books">I want to buy books</option>
+        </select>
+        
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name" required>
+        
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" required>
+        
+        <label for="phone">Phone</label>
+        <input id="phone" type="tel" name="phone" required>
+        
+        <fieldset>
+          <legend>Contact Preference</legend>
+          <label class="checkbox-label" for="email-preference">
+            <input id="email-preference" type="checkbox" name="contact-preference[]" value="email" checked>
+            By email
+          </label>
+          <label class="checkbox-label" for="phone-preference">
+            <input id="phone-preference" type="checkbox" name="contact-preference[]" value="phone">
+            By phone
+          </label>
+        </fieldset>
+        
+        <fieldset>
+          <legend>Receive Weekly Newsletter</legend>
+          <label class="radio-label" for="yes-newsletter">
+            <input id="yes-newsletter" type="radio" name="newsletter" value="yes" checked>
+            Yes
+          </label>
+          <label class="radio-label" for="no-newsletter">
+            <input id="no-newsletter" type="radio" name="newsletter" value="no">
+            No
+          </label>
+        </fieldset>
+        
+        <label for="notes">Extra Notes</label>
+        <textarea id="notes" name="notes"></textarea>
+        
+        <div class="submit-buttons">
+          <button type="submit">Submit</button>
+          <button type="reset">Reset</button>
+        </div>
+      </form>
+    </main>
+    <footer>
+      <div class="footer_1">
+          <h3>Company</h3>
+          <ul>
+              <li><a href="">About Us</a></li>
+              <li><a href="">Contact Us</a></li>
+              <li><a href="">Privacy Policy</a></li>
+              <li><a href="">Terms & Conditions</a></li>
+          </ul>
+      </div>
+      <div class="footer_2">
+          <h3>Follow Us</h3>
+          <ul>
+              <li><a href="">Facebook</a></li>
+              <li><a href="">Twitter</a></li>
+              <li><a href="">Instagram</a></li>
+              <li><a href="">Youtube</a></li>
+          </ul>
+      </div>
+      <div class="footer_3">
+          <h3>Newsletter</h3>
+          <p>Subscribe to our newsletter and get 10% off your first purchase</p>
+          <form action="">
+              <input type="email" name="email" id="email" placeholder="Enter your email">
+              <button type="submit">Subscribe</button>
+          </form>
+      </div>
+  </footer>
+  </body>
+</html>
