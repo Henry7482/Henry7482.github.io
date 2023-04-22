@@ -45,7 +45,6 @@ main {
     ); 
 }
 /* Header */
-/* Header */
 
 header {
     background-color: #0F0F0F;
@@ -167,94 +166,89 @@ header {
     transition: all 0.3s ease-in-out;
  }
 
-/* Banner */
+/* Breadcrumb & Title */
 
-.book_banner {
-    overflow: hidden; /* hide any content that goes outside of the container's bounds */
-    position: relative; /* set the position to relative to allow absolute positioning of the child element */
-}
-
-.book_banner .banner_photo {
+.breadcrumb ul {
     display: flex;
-    position: relative; 
-    z-index: 100;
-    left: -100%;
-    transition: all 0.3s ease-in-out;
-    animation: carMoving 500ms ease forwards;
-    animation-delay: 500ms;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
 }
 
-.banner_photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    background-image: linear-gradient(to bottom, transparent, white);
+.breadcrumb ul li {
+    display: inline-block;
+    position: relative;
+    padding: 0 1rem;
 }
 
-.banner_photo p {
-    position: absolute;
-    width: 100%;
+.breadcrumb ul li:not(:last-child) {
+    border-right: 1px solid #fff;
+}
+
+.breadcrumb ul li a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.breadcrumb ul li:not(:last-child) a {
+    color: #8d8d8d;
+}
+
+.category_title {
+    background-image: url("https://drive.google.com/uc?export=view&id=1F2fPNNonEmj1ohhOGIOW2Xzk1xMkdoFh");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #141414;
+    border-bottom: 0.5vh ridge #000000;
+}
+
+.description {
+    display: flex;
+    position: relative;
     justify-content: center;
-    text-align: center;
-    bottom: 15%;
     font-family: 'Quicksand', sans-serif;
+    font-size: 2.5rem;
     font-weight: 500;
-    font-size: 2rem;
-    z-index: 200;
+    margin: 0;
+    padding-bottom: 3rem;
+    color: #c6e2ff;
+    animation: neon .08s ease-in-out infinite alternate;
 }
 
-.banner_photo a {
-    z-index: 300;
+.description h2 {
+    margin: 0;
 }
 
-.banner_photo button {
-    position: absolute;
-    bottom: 5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #0DFFF8;
-    border: none;
-    border-radius: 0.5rem;
-    padding: 0.5rem 1rem;
-    font-size: 1.2rem;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 500;
-    color: black;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    z-index: 300;
-}
+@keyframes neon {
+    from {
+      text-shadow:
+      0 0 6px rgba(116,1,255,0.92),
+      0 0 30px rgba(116,1,255,0.34),
+      0 0 12px rgba(214,12,224,0.52),
+      0 0 21px rgba(214,12,224,0.92),
+      0 0 34px rgba(214,12,224,0.78),
+      0 0 54px rgba(214,12,224,0.92);
+    }
+    to {
+      text-shadow:
+      0 0 6px rgba(116,1,255,0.98),
+      0 0 30px rgba(116,1,255,0.42),
+      0 0 12px rgba(214,12,224,0.58),
+      0 0 22px rgba(214,12,224,0.84),
+      0 0 38px rgba(214,12,224,0.88),
+      0 0 60px rgba(214,12,224,1);
+    }
+  }
 
-.blur-box {
-    position: absolute;
-    height: 50%;
+/* Ad banner */
+main img {
     width: 100%;
-    bottom: 0;
-    background-image: linear-gradient(to bottom, transparent, rgb(110, 62, 124));
-    z-index: 100;
-    filter: blur(5px);
 }
-
-/* Elements with an effect */
-
-@keyframes carMoving {
-    0% {
-        left: -100%;
-    }
-    100% {
-        display: block;
-        left: 0;
-    }
-}
-
-.banner_photo a button:hover{
-    scale: 1.1;
-    bottom: 4.5%;
-    left: 50.5%;
-    box-shadow: 0px 0px 25px 3px #0DFFF88d;
-    transition: all 0.3s ease-in-out;
-}
-
 /* Category */
 
 .category {
@@ -283,6 +277,7 @@ header {
     height: 0.5vh;
     background: #1f1f1f;
 }
+
 
 .category:last-child:before {
     content: "";
@@ -333,15 +328,6 @@ header {
     color: #dbc3ff;
 }
 
-.category .title .title_4 {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 500;
-    margin: 0;
-    /* https://codepen.io/ananyaneogi/pen/Bgozrz */
-    text-shadow: 0 0 5px #FF010A, 0 0 15px #FF010A, 0 0 20px #FF010A, 0 0 40px #FF010A, 0 0 60px #FF7F05, 0 0 10px #EB3800, 0 0 98px #FF7F05;
-    color: #ffb5b5;
-}
 
 .category .book_list {
     display: flex;
