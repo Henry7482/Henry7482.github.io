@@ -44,7 +44,7 @@ main {
       transparent 13px
     ); 
 }
-/* Header */
+
 /* Header */
 
 header {
@@ -455,6 +455,7 @@ header {
 }
 
 /* Footer */
+
 footer {
     display:flex;
     flex-direction: column;
