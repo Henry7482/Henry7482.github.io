@@ -362,7 +362,7 @@ main img {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: calc((100% / 3) - 4rem);
+    width: calc((100% / 4) - 4rem);
     height: 29.35rem;
     transition: all 0.3s ease-in-out;
 }
